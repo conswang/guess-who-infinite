@@ -4,11 +4,11 @@ import LobbyRoom from './LobbyRoom';
 
 export default (props) => {
     const [select, useSelect] = useState(true);
+    const [lobby, setLobby] = useState(false);
     let [name, setName] = useState('');
     let [category, setCategory] = useState('');
     let [join, setJoin] = useState('');
-    const [lobby, setLobby] = useState(false);
-    
+    let [code, setCode] = useState('');
 
     let createGame = () => {
         if(name === '' || category === '') {
@@ -19,8 +19,10 @@ export default (props) => {
         props.socket.on('createdGame', joinCode => {
             // TODO: pass join code to lobby room
             console.log(joinCode);
+            setCode(joinCode);
         });
         setLobby(true);
+        
     }
     
     let joinGame = () => {
@@ -71,7 +73,7 @@ export default (props) => {
     }
 
     const inLobby = () => {
-        return lobby ? <LobbyRoom /> :
+        return lobby ? <LobbyRoom code={ code }/> :
               <div className="landing-form-container">
                 <div className="create-join-container">
                     <button onClick={() => {useSelect(!select)}} className={ select ? 'create select' : 'create'}> create game </button>
@@ -86,6 +88,7 @@ export default (props) => {
 
     return(
         <div className="landing-container">
+            { console.log(`${code} hereeeeee`) }
             <div className="title">
                 <h3> Guess Who </h3>
                 <h1> Infinite </h1>
