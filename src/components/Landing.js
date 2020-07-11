@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default () => {
+    const [select, useSelect] = useState(true);
+
     return(
         <div className="landing-container">
             <div className="title">
@@ -10,8 +12,8 @@ export default () => {
 
             <div className="landing-form-container">
                 <div className="create-join-container">
-                    <button className="create"> create game </button>
-                    <button className="join"> join game</button>
+                    <button onClick={() => {useSelect(!select)}} className={ select ? 'create select' : 'create'}> create game </button>
+                    <button onClick={() => {useSelect(!select)}} className={ select ? 'join' : 'join select'}> join game</button>
                 </div>
 
 
@@ -20,7 +22,7 @@ export default () => {
                 <label>category</label>
                 <input></input>
                 <label>no.of cards(slider)</label>
-                <button>CREATE</button>
+                <button className="submit"> CREATE </button>
             </div>
         </div>
     )

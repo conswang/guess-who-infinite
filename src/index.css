@@ -3,6 +3,17 @@
   padding: 0;
 }
 
+.title {
+  font-family: 'Press Start 2P';
+  padding: 30px;
+  letter-spacing: 1px;
+  
+}
+
+.title h1 {
+  padding: 10px;
+}
+
 .landing-container {
   width: 100%;
   height: 100vh;
@@ -11,17 +22,22 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  transition: 2s;
 }
 
 .landing-form-container {
+  width: 70%;
+  margin: 0 auto;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
   border: 2px solid white;
-  border-radius: 3px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .landing-form-container label {
@@ -29,15 +45,40 @@
 }
 
 .landing-form-container input {
-  opacity: 0.1;
+  background: transparent;
   border: 1px solid white;
+  margin-bottom: 5px;
 }
 
 .create-join-container {
   width: 100%;
-  background-color: black;
+  margin-bottom: 10px;
 }
 
 .create-join-container button {
   width: 50%;
+  background-color: Transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  cursor: pointer;
+  outline:none;
+  padding: 6px;
+}
+
+.submit {
+  width: 30%;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  outline:none;
+}
+
+.select {
+  border: 1px solid white !important;
+  border-bottom: 0 !important;
+
 }
