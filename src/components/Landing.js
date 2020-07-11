@@ -7,6 +7,7 @@ export default () => {
 
     let createGame = () => {
         let socket = io(config.SERVER_URI);
+        console.log(process.env.REACT_APP_STAGE);
         socket.emit('createGame', 'name1');
     }
     
