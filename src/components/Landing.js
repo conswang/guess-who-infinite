@@ -1,6 +1,18 @@
 import React from 'react';
+import io from 'socket.io-client';
 
 export default () => {
+
+    let createGame = () => {
+        let socket = io(`http://localhost:5000`);
+        socket.emit('createGame', 'name1');
+    }
+    
+    let joinGame = () => {
+        let socket = io(`http://localhost:5000`);
+        socket.emit('joinGame', 'name2', 'ROOM0');
+    }
+
     return(
         <div className="landing-container">
             <div className="title">
@@ -20,7 +32,7 @@ export default () => {
                 <label>category</label>
                 <input></input>
                 <label>no.of cards(slider)</label>
-                <button>CREATE</button>
+                <button onClick={createGame}>CREATE</button>
             </div>
         </div>
     )
