@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import io from 'socket.io-client';
+import { config } from '../config/config.js';
 
 export default () => {
     const [select, useSelect] = useState(true);
 
     let createGame = () => {
-        let socket = io(`http://localhost:5000`);
+        let socket = io(config.SERVER_URI);
         socket.emit('createGame', 'name1');
     }
     
     let joinGame = () => {
-        let socket = io(`http://localhost:5000`);
+        let socket = io(config.SERVER_URI);
         socket.emit('joinGame', 'name2', 'ROOM0');
     }
 
