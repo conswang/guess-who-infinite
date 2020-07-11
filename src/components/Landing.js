@@ -28,12 +28,12 @@ export default () => {
                 </div>
 
 
-                <label>name</label>
-                <input></input>
-                <label>category</label>
-                <input></input>
+                <label for="name">name</label>
+                <input name="name" id="name" type="text"></input>
+                <label for="category">category</label>
+                <input name="category" id="category" type="text"></input>
                 <label>no.of cards(slider)</label>
-                <button className="submit" onClick={createGame}> CREATE </button>
+                <button type="submit" className="submit" onClick={createGame}> CREATE </button>
             </div>
         </div>
     )
