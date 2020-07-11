@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import io from 'socket.io-client';
-import { config } from '../config/config.js';
 import LobbyRoom from './LobbyRoom';
 
-export default () => {
+export default (props) => {
     const [select, useSelect] = useState(true);
     let [name, setName] = useState('');
     let [category, setCategory] = useState('');
@@ -16,10 +15,11 @@ export default () => {
             alert("PLEASE ENTER A NAME AND SELECT A CATEGORY")
             return
         }
-
-        let socket = io(config.SERVER_URI);
-        console.log(process.env.REACT_APP_STAGE);
-        socket.emit('createGame', name);
+        props.socket.emit('createGame', name);
+        props.socket.on('createdGame', joinCode => {
+            // TODO: pass join code to lobby room
+            console.log(joinCode);
+        });
         setLobby(true);
     }
     
@@ -28,9 +28,7 @@ export default () => {
             alert("PLEASE ENTER A NAME AND ENTER A CODE")
             return
         }
-
-        let socket = io(config.SERVER_URI);
-        socket.emit('joinGame', name, 'ROOM0');
+        props.socket.emit('joinGame', name, join);
     }
 
     const handleNameChange = event => {
