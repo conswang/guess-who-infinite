@@ -3,6 +3,8 @@ import io from 'socket.io-client';
 
 export default () => {
     const [select, useSelect] = useState(true);
+    let [name, setName] = useState('');
+    let [category, setCategory] = useState('');
 
     let createGame = () => {
         let socket = io(`http://localhost:5000`);
@@ -12,6 +14,16 @@ export default () => {
     let joinGame = () => {
         let socket = io(`http://localhost:5000`);
         socket.emit('joinGame', 'name2', 'ROOM0');
+    }
+
+    const handleNameChange = event => {
+        const letter = event.target.value;
+        setName(letter);
+    }
+
+    const handleCategoryChange = event => {
+        const letter = event.target.value;
+        setCategory(letter);        
     }
 
     return(
@@ -29,9 +41,9 @@ export default () => {
 
 
                 <label for="name">name</label>
-                <input name="name" id="name" type="text"></input>
+                <input name="name" id="name" type="text" value={ name } onChange={ handleNameChange }></input>
                 <label for="category">category</label>
-                <input name="category" id="category" type="text"></input>
+                <input name="category" id="category" type="text" value={ category } onChange={ handleCategoryChange }></input>
                 <label>no.of cards(slider)</label>
                 <button type="submit" className="submit" onClick={createGame}> CREATE </button>
             </div>
