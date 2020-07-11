@@ -1,31 +1,17 @@
 import React, { useState } from 'react';
 import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
+import { Card } from 'react-bootstrap';
 
 export default () => {
-    const startupScreen = (
-        <div>
-          <img src="https://picsum.photos/300/300" alt="default pic" />
-        </div>
-      );
-
-    const slider = (
-        <AwesomeSlider>
-          <div data-src="https://picsum.photos/300/300" />
-          <div data-src="https://picsum.photos/300/300" />
-          <div data-src="https://picsum.photos/300/300" />
-        </AwesomeSlider>
-      );
 
     return (
-        <div className ="character-container">
-            <h1>Choose a Character</h1>
-            <div className="pic-carousel">
-            <AwesomeSlider
-                startupScreen={startupScreen}
-            >
+        <div className="caro">
+            <AwesomeSlider className="aws-btn">
+                <div data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Icecat1-300x300.svg/300px-Icecat1-300x300.svg.png" />
+                <div data-src="https://dummyimage.com/300.png/09f/fff" />
+                <div data-src="https://www.thatericalper.com/wp-content/uploads/2014/10/dark-side-of-the-moon-300-x-300.jpg" />
             </AwesomeSlider>
-            </div>
         </div>
-        
     )
 }
