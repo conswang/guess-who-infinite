@@ -6,6 +6,8 @@ export default () => {
     const [select, useSelect] = useState(true);
     let [name, setName] = useState('');
     let [category, setCategory] = useState('');
+    let [join, setJoin] = useState('');
+    let [tab, setTab] = useState('create');
 
     let createGame = () => {
         let socket = io(config.SERVER_URI);
@@ -28,6 +30,33 @@ export default () => {
         setCategory(letter);        
     }
 
+    const handleJoinChange = event => {
+        const letter = event.target.value;
+        setJoin(letter);        
+    }
+
+    const createTab = () => {
+        return <div className='normalize-bot'>
+                <label for="category">category</label>
+                <input name="category" id="category" type="text" value={ category } onChange={ handleCategoryChange }></input>
+                <label>no.of cards</label>
+                <span className="right-side-button">
+                    <button type="submit" className="submit" onClick={createGame}> CREATE </button>
+                </span>
+            </div>
+    }
+
+    const joinTab = () => {
+        return <div className='normalize-bot'>
+                <label for="join">join code</label>
+                <input name="join" id="join" type="text" value={ join } onChange={ handleJoinChange }></input>
+                <br></br>
+                <span className="right-side-button">
+                    <button type="submit" className="submit" onClick={joinGame}> JOIN </button>
+                </span>
+            </div>
+    }
+
     return(
         <div className="landing-container">
             <div className="title">
@@ -44,10 +73,7 @@ export default () => {
 
                 <label for="name">name</label>
                 <input name="name" id="name" type="text" value={ name } onChange={ handleNameChange }></input>
-                <label for="category">category</label>
-                <input name="category" id="category" type="text" value={ category } onChange={ handleCategoryChange }></input>
-                <label>no.of cards(slider)</label>
-                <button type="submit" className="submit" onClick={createGame}> CREATE </button>
+                { select ? createTab() : joinTab() }
             </div>
         </div>
     )

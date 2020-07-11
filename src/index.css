@@ -55,6 +55,7 @@
   color: white;
 }
 
+
 .landing-form-container input:hover {
   box-shadow: 7px 7px 2px 1px rgba(0, 0, 255, .2);
 }
@@ -79,14 +80,20 @@
 
 .submit {
   width: 30%;
-  background: transparent;
+  background: white;
   border: 1px solid white;
-  color: white;
+  color: #5E1CEC;
   padding: 5px;
   margin-top: 10px;
   cursor: pointer;
   outline:none;
   transition: ease-in 0.5s;
+  font-weight: 600;
+}
+
+.right-side-button {
+  display:flex;
+  justify-content:flex-end;
 }
 
 .submit:hover {
@@ -96,6 +103,11 @@
 .select {
   border: 1px solid white !important;
   border-bottom: 0 !important;
+}
+
+.normalize-bot {
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen 
