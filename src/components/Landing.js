@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
+import io from 'socket.io-client';
 
 export default () => {
     const [select, useSelect] = useState(true);
+
+    let createGame = () => {
+        let socket = io(`http://localhost:5000`);
+        socket.emit('createGame', 'name1');
+    }
+    
+    let joinGame = () => {
+        let socket = io(`http://localhost:5000`);
+        socket.emit('joinGame', 'name2', 'ROOM0');
+    }
 
     return(
         <div className="landing-container">
@@ -22,7 +33,7 @@ export default () => {
                 <label>category</label>
                 <input></input>
                 <label>no.of cards(slider)</label>
-                <button className="submit"> CREATE </button>
+                <button className="submit" onClick={createGame}> CREATE </button>
             </div>
         </div>
     )
