@@ -5,10 +5,12 @@ import LobbyRoom from './LobbyRoom';
 
 export default () => {
     const [select, useSelect] = useState(true);
+    const [lobby, setLobby] = useState(false);
     let [name, setName] = useState('');
     let [category, setCategory] = useState('');
     let [join, setJoin] = useState('');
-    const [lobby, setLobby] = useState(false);
+    let [code, setCode] = useState('');
+    
     
 
     let createGame = () => {
@@ -21,6 +23,7 @@ export default () => {
         console.log(process.env.REACT_APP_STAGE);
         socket.emit('createGame', name);
         setLobby(true);
+        
     }
     
     let joinGame = () => {
