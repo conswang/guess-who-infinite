@@ -7,6 +7,7 @@ import QuestionContainer from './components/QuestionContainer';
 import io from 'socket.io-client';
 import { config } from './config/config.js';
 import CharacterSelect from './components/CharacterSelect';
+import FunComp from './components/FunComp';
 
 function App() {
 
@@ -15,6 +16,9 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/test">
+          <FunComp />
+        </Route>
         <Route path="/quest">
           <QuestionContainer />
         </Route>
