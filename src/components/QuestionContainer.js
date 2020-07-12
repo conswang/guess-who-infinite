@@ -36,7 +36,7 @@ export default (props) => {
                 </div>
                 
             </div>
-            <h2 className="reply"> YES! </h2>
+            <h2 className="reply"> { answer } </h2>
         </div>
     )
 }

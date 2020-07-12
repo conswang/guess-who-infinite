@@ -37,9 +37,9 @@ export default class Game extends React.Component {
   render () {
     return (
       <div className='game-container'>
-        <Answer socket={this.props.socket} show={this.state.answerMode}/>
+        <Answer socket={this.props.socket} show={this.state.answerMode} question={ this.state.question }/>
         <CharacterSelect socket={this.props.socket}/>
-        <QuestionContainer question={ this.state.question } socket={this.props.socket}/>
+        <QuestionContainer  socket={this.props.socket}/>
       </div>
     );
   }
