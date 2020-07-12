@@ -5,10 +5,7 @@ import CharacterSelect from './CharacterSelect';
 import CharacterContainer from './CharacterContainer';
 
 export default class Game extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   state = {
     // status is ask | answer | wait
     status: '',
@@ -37,7 +34,6 @@ export default class Game extends React.Component {
   }
 
   questionWasAsked = () => {
-    console.log('question was asked')
     this.setState({
       status: 'wait'
     })
