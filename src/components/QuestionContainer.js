@@ -11,6 +11,7 @@ export default (props) => {
 
     const ask = () => {
         props.socket.emit('ask', question);
+        props.questionCallback();
     }
 
     useEffect(() => {

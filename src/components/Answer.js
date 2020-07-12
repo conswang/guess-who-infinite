@@ -36,6 +36,7 @@ export default function Answer(props) {
 
   const answer = (isTrue) => {
     props.socket.emit('answer', isTrue);
+    props.answerCallback();
     handleClose();
   }
 
