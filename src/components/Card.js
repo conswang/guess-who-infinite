@@ -5,7 +5,15 @@ export default (props) => {
 
     const selected = (event) => {
         props.cardIdx(props)
+        if(props.guess) {
+            alert(props.idx)
+            return props.idx
+        }
         setSelect(!select)
+    }
+
+    const test = () => {
+        alert('right')
     }
 
     return(
