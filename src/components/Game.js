@@ -6,11 +6,12 @@ import CharacterContainer from './CharacterContainer';
 import { socket } from '../App';
 
 export default class Game extends React.Component {
-  
+
   state = {
-    // status is ask | answer | wait
+    // status is ask | answer | wait | guess | end
     status: 'wait',
     question: '',
+    guessedIdx: '',
   }
 
   componentDidMount() {
@@ -25,6 +26,10 @@ export default class Game extends React.Component {
         question: question
       })
     )
+    socket.on('gameEnded', (result) => {
+      this.props.setModeCallback('gameEnd');
+      this.props.setResultCallback(result);
+    });
   }
 
   answerWasSent = () => {
@@ -38,9 +43,24 @@ export default class Game extends React.Component {
       status: 'wait'
     })
   }
-  
-  updateGuessedIdx = () => {
 
+  readyToGuess = () => {
+    this.setState({
+      status: 'guess'
+    })
+  }
+  
+  updateGuessedIdx = (idx) => {
+    this.setState({
+      guessedIdx: idx
+    })
+  }
+
+  submitGuess = () => {
+    console.log(this.state.guessedIdx)
+    if (this.state.guessedIdx !== '') {
+      socket.emit('guess', this.state.guessedIdx);
+    }
   }
 
   render () {
@@ -51,7 +71,11 @@ export default class Game extends React.Component {
             open={this.state.status === 'answer'}
             question={ this.state.question }
             answerCallback={ this.answerWasSent }/>
-          <CharacterContainer />
+          <button onClick={ this.readyToGuess }>Ready to Guess</button>
+          <button onClick={ this.submitGuess }>Submit Guess</button>
+          <CharacterContainer
+            inFinalSelectMode={ this.state.status === 'guess' }
+            callback={ this.updateGuessedIdx } />
           <QuestionContainer questionCallback={ this.questionWasAsked }/>
         </div>
         :<></>
