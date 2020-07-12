@@ -26,6 +26,10 @@ export default class Game extends React.Component {
         question: question
       })
     )
+    socket.on('gameEnded', (result) => {
+      this.props.setModeCallback('gameEnd');
+      this.props.setResultCallback(result);
+    });
   }
 
   answerWasSent = () => {
@@ -56,10 +60,6 @@ export default class Game extends React.Component {
     console.log(this.state.guessedIdx)
     if (this.state.guessedIdx !== '') {
       socket.emit('guess', this.state.guessedIdx);
-      socket.on('gameEnded', (result) => {
-        this.props.setModeCallback('gameEnd');
-        this.props.setResultCallback(result);
-      });
     }
   }
 
