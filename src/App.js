@@ -7,6 +7,7 @@ import CharacterContainer from './components/CharacterContainer';
 import io from 'socket.io-client';
 import { config } from './config/config.js';
 import CharacterSelect from './components/CharacterSelect';
+import SelectContainer from './components/SelectContainer';
 import Game from './components/Game'
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
           <CharacterContainer socket={ socket } />
         </Route>
         <Route path="/select">
-          <CharacterSelect socket={ socket } />
+          <SelectContainer socket={ socket } />
         </Route>
         <Route path="/">
           <Landing socket={ socket } />

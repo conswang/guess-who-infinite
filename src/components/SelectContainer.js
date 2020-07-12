@@ -24,9 +24,9 @@ export default class SelectContainer extends React.Component {
 
   render() {
     return (
-      <>
-        <CharacterContainer selectCardCallback={this.cardWasSelected}/>
-      </>
+      status === 'select'
+        ? <CharacterContainer selectCardCallback={this.cardWasSelected}/>
+        : <p>Waiting for selection</p>
     );
   }
 }
