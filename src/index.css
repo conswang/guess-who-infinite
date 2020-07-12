@@ -4,6 +4,10 @@
   --background-theme: linear-gradient(180deg, #5E1CEC 0%, #F74128 100%), #FFFFFF;
 }
 
+*:focus {
+  outline: none;
+}
+
 .title {
   font-family: 'Press Start 2P';
   padding: 30px;
@@ -139,7 +143,27 @@
     width: 500px;
   }
 
+.answer-modal-title {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 64px;
+  text-align: center;
+  background: -webkit-linear-gradient(#5E1CEC, #F74128);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+.answer-modal-question {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #333333;
+}
 
 @media only screen 
 and (min-device-width : 768px) {
