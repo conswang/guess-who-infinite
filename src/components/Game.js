@@ -9,7 +9,7 @@ export default class Game extends React.Component {
 
   state = {
     // status is ask | answer | wait
-    status: '',
+    status: 'answer',
     question: '',
   }
 
@@ -23,6 +23,7 @@ export default class Game extends React.Component {
     );
     socket.on('playerAsked', question => 
       this.setState({
+        status: 'answer',
         question: question
       })
     )

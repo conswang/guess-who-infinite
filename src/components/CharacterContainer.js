@@ -1,16 +1,21 @@
 import React, { useState} from 'react';
 import Card from './Card';
 
-
-export default () => {
+export default (props) => {
     const [index, setIndex] = useState([0, 8]);
-    const [guess, setGuess] = useState(false);
+    
     const [datas, setDatas] = useState(data);
 
 
     const populateCards = () => {
         return data.map((card, idx) => {
-            return <Card img={card.img} selected={card.selected} idx={idx} guess={ guess } className="card-img" selectCard={selectCard}></Card>
+            return <Card img={card.img} 
+                         isSelect={card.selected} 
+                         idx={idx}
+                         selectCard={selectCard} 
+                         inFinalSelectMode={props.inFinalSelectMode} 
+                         callback={ props.callback }>
+                    </Card>
         })
     }
 
@@ -38,8 +43,6 @@ export default () => {
 
     return (
         <div className="character-wrapper">
-            { console.log(datas)}
-            <button className='guess' onClick={ () => setGuess(!guess) }> Click Here to Guess </button>
             <div className="grid-container">
                 <button onClick={ rotateLeft } className="fa fa-angle-left"></button>
                 <div className="character-container">
