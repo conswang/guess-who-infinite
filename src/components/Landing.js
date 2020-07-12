@@ -17,7 +17,6 @@ export default (props) => {
         }
         props.socket.emit('createGame', name);
         props.socket.on('createdGame', joinCode => {
-            // TODO: pass join code to lobby room
             console.log(joinCode);
             setCode(joinCode);
         });
@@ -31,6 +30,9 @@ export default (props) => {
             return
         }
         props.socket.emit('joinGame', name, join);
+        props.socket.on('startedGame', () => {
+            window.location = '/select';
+        });
     }
 
     const handleNameChange = event => {
@@ -73,7 +75,7 @@ export default (props) => {
     }
 
     const inLobby = () => {
-        return lobby ? <LobbyRoom code={ code }/> :
+        return lobby ? <LobbyRoom code={ code } socket={props.socket}/> :
               <div className="landing-form-container">
                 <div className="create-join-container">
                     <button onClick={() => {useSelect(!select)}} className={ select ? 'create select' : 'create'}> create game </button>

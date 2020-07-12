@@ -36,15 +36,14 @@ export default function Answer(props) {
 
   const answer = (isTrue) => {
     props.socket.emit('answer', isTrue);
+    props.answerCallback();
     handleClose();
   }
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        open modal
-      </button>
       <Modal
+        show = {props.show}
         className={classes.modal}
         open={open}
         onClose={handleClose}

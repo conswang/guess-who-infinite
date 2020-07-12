@@ -27,5 +27,9 @@ const IMAGES =
 }]
 
 export default () => {
-    return (<Gallery images={IMAGES}/>)
+    return (
+        <div className="select-container">
+        <Gallery images={IMAGES} className="gallery" />
+        </div>
+    )
 }
