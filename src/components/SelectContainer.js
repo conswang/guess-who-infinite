@@ -42,8 +42,12 @@ export default class SelectContainer extends React.Component {
               <button className='switch' onClick={ () => this.selectCard(this.state.selectedIdx)}>Select this Card</button>
               <CharacterContainer callback={this.updateSelectedIdx} inFinalSelectMode={true}/>
             </>
-          : <p>Waiting for selection</p>
+          : <div className="waitingRoom">
+              <div class="loader"></div>
+              <h1>Waiting for other player...</h1>
+            </div>
         :<></>
+      
     );
   }
 }
