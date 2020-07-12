@@ -3,17 +3,9 @@ import React, { useState } from 'react';
 export default (props) => {
     const [select, setSelect] = useState(false)
 
-    const selected = (event) => {
-        props.cardIdx(props)
-        if(props.guess) {
-            alert(props.idx)
-            return props.idx
-        }
+    const selected = () => {
         setSelect(!select)
-    }
-
-    const test = () => {
-        alert('right')
+        props.callback(props.idx);
     }
 
     return(

@@ -1,9 +1,8 @@
 import React, { useState} from 'react';
 import Card from './Card';
 
-export default () => {
+export default (props) => {
     const [index, setIndex] = useState([0, 8]);
-    const [guess, setGuess] = useState(false);
     
     const data = [
         { img: 'https://cdn.costumewall.com/wp-content/uploads/2017/02/robin-young-justice.jpg' },
@@ -46,12 +45,8 @@ export default () => {
 
     const populateCards = () => {
         return data.map((card, idx) => {
-            return <Card img={card.img} idx={idx} cardIdx={ cardIdx } guess={ guess } className="card-img"></Card>
+            return <Card img={card.img} idx={idx} className="card-img" callback={ props.callback }></Card>
         })
-    }
-
-    const cardIdx = (event) => {
-        console.log(event.idx)
     }
 
     const rotateLeft = () => {
@@ -68,7 +63,6 @@ export default () => {
 
     return (
         <div className="character-wrapper">
-            <button className='guess' onClick={ () => setGuess(!guess) }> Click Here to Guess </button>
             <div className="grid-container">
                 <button onClick={ rotateLeft } className="fa fa-angle-left"></button>
                 <div className="character-container">

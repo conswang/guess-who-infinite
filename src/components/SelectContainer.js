@@ -5,7 +5,8 @@ import { socket } from '../App';
 export default class SelectContainer extends React.Component {
   state = {
     // status can be select | wait
-    status: 'select'
+    status: 'select',
+    selectedIdx: '',
   }
 
   componentDidMount() {
@@ -14,20 +15,31 @@ export default class SelectContainer extends React.Component {
     });
   }
 
-  cardWasSelected = (idx) => {
-    socket.emit('selectCard', idx);
-    socket.on('waitingForSelection', () => {
-      this.setState({
-        status: 'wait'
-      })
-    });
+  updateSelectedIdx = (idx) => {
+    this.setState({
+      selectedIdx: idx
+    })
+  }
+
+  selectCard = (idx) => {
+    if (idx !== '') {
+      socket.emit('selectCard', idx);
+      socket.on('waitingForSelection', () => {
+        this.setState({
+          status: 'wait'
+        })
+      });
+    }
   }
 
   render() {
     return (
       this.props.show ?
         this.state.status === 'select'
-          ? <CharacterContainer selectCardCallback={this.cardWasSelected}/>
+          ? <>
+              <button className='switch' onClick={ () => this.selectCard(this.state.selectedIdx)}>Select this Card</button>
+              <CharacterContainer callback={this.updateSelectedIdx}/>
+            </>
           : <p>Waiting for selection</p>
         :<></>
     );
