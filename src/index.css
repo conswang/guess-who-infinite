@@ -13,7 +13,6 @@
   font-family: 'Press Start 2P';
   padding: 30px;
   letter-spacing: 1px;
-  
 }
 
 .title h1 {
@@ -137,12 +136,12 @@
   
 }
 
-.question-container button, h1 {
+.question-container button, h2 {
   font-family: var(--pixel-font);
   background: linear-gradient(180deg, #5E1CEC 0%, #F74128 100%), #FFFFFF;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
+  font-size: 36px;
 }
 
 .question-container button {

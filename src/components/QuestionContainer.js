@@ -24,7 +24,7 @@ export default () => {
                 <button onClick={ ask }> Ask! </button>
                 <input type="text" value={ question } onChange={ handleQuestion } onKeyDown={ handleEnter }></input>
             </div>
-            <h1 className="reply"> YES! </h1>
+            <h2 className="reply"> YES! </h2>
         </div>
     )
 }
