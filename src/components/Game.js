@@ -13,11 +13,11 @@ export default class Game extends React.Component {
 
   render () {
     return (
-      <>
+      <div className='game-container'>
         <Answer socket={this.state.socket}/>
         <CharacterSelect/>
         <QuestionContainer socket={this.state.socket}/>
-      </>
+      </div>
     );
   }
 }
