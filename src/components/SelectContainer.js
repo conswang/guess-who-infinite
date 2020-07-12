@@ -1,5 +1,6 @@
 import React from 'react';
 import CharacterContainer from './CharacterContainer';
+import { socket } from '../App';
 
 export default class SelectContainer extends React.Component {
   state = {

@@ -8,31 +8,31 @@ import io from 'socket.io-client';
 import { config } from './config/config.js';
 import CharacterSelect from './components/CharacterSelect';
 import SelectContainer from './components/SelectContainer';
-import Game from './components/Game'
+import Game from './components/Game';
 
 function App() {
-
-  const socket = io(config.SERVER_URI);
 
   return (
     <Router>
       <Switch>
         <Route path="/game">
-          <Game socket={ socket } />
+          <Game/>
         </Route>
         <Route path="/test">
-          <CharacterContainer socket={ socket } />
+          <CharacterContainer/>
         </Route>
         <Route path="/select">
-          <SelectContainer socket={ socket } />
+          <SelectContainer/>
         </Route>
         <Route path="/">
-          <Landing socket={ socket } />
+          <Landing/>
         </Route>
       </Switch>
     </Router>
   );
 }
+
+export const socket = io(config.SERVER_URI);
 
 export default App;
 

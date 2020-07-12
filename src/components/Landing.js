@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import io from 'socket.io-client';
+import { socket } from '../App';
 import LobbyRoom from './LobbyRoom';
 
 export default (props) => {
@@ -15,8 +15,8 @@ export default (props) => {
             alert("PLEASE ENTER A NAME AND SELECT A CATEGORY")
             return
         }
-        props.socket.emit('createGame', name);
-        props.socket.on('createdGame', joinCode => {
+        socket.emit('createGame', name);
+        socket.on('createdGame', joinCode => {
             console.log(joinCode);
             setCode(joinCode);
         });
@@ -29,8 +29,8 @@ export default (props) => {
             alert("PLEASE ENTER A NAME AND ENTER A CODE")
             return
         }
-        props.socket.emit('joinGame', name, join);
-        props.socket.on('startedGame', () => {
+        socket.emit('joinGame', name, join);
+        socket.on('startedGame', () => {
             window.location = '/select';
         });
     }
@@ -75,7 +75,7 @@ export default (props) => {
     }
 
     const inLobby = () => {
-        return lobby ? <LobbyRoom code={ code } socket={props.socket}/> :
+        return lobby ? <LobbyRoom code={ code }/> :
               <div className="landing-form-container">
                 <div className="create-join-container">
                     <button onClick={() => {useSelect(!select)}} className={ select ? 'create select' : 'create'}> create game </button>
