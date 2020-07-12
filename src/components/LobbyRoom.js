@@ -13,6 +13,7 @@ export default (props) => {
         <div className="lobby-container">
             <p> Type join code: </p>
             <h1> { props.code }  </h1>
+            <div class="loader"></div>
             <p> Waiting for player 2... </p>
         </div>
     )
