@@ -39,6 +39,10 @@ export default class Game extends React.Component {
       status: 'wait'
     })
   }
+  
+  updateGuessedIdx = () => {
+
+  }
 
   render () {
     return (

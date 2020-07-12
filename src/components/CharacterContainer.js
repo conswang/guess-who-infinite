@@ -10,12 +10,8 @@ export default () => {
 
     const populateCards = () => {
         return data.map((card, idx) => {
-            return <Card img={card.img} selected={card.selected} idx={idx} cardIdx={ cardIdx } guess={ guess } className="card-img" selectCard={selectCard}></Card>
+            return <Card img={card.img} selected={card.selected} idx={idx} guess={ guess } className="card-img" selectCard={selectCard}></Card>
         })
-    }
-
-    const cardIdx = (event) => {
-        console.log(event.idx)
     }
 
     const rotateLeft = () => {
