@@ -239,7 +239,7 @@ body {
   border-radius: 20px;
   border: 1px solid white;
   cursor: pointer;
-  transition: 1s ease-in;
+  /* transition: 1s ease-in; */
 }
 
 .card-img:hover {
