@@ -209,21 +209,30 @@ body {
 }
 
 .character-container {
-  background-color: pink;
+  width: 750px;
+  height: 450px;
+  background-color: #232323;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   justify-items: center;
-  grid-gap: 10px;
+  align-items: center;
+  grid-gap: 5px;
 }
 
 .card-img {
-  width: 175px;
+  width: 150px;
   height: 200px;
   border-radius: 20px;
+  border: 1px solid white;
 }
 
 .game-container {
   margin: 0 auto;
+}
+
+.grid-container {
+  display: flex;
 }
 
 .gallery {
