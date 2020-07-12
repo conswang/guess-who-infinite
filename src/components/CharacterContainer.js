@@ -43,9 +43,13 @@ export default () => {
     ]
 
     const populateCards = () => {
-        return data.map(card => {
-            return <Card img={card.img}></Card>
+        return data.map((card, idx) => {
+            return <Card img={card.img} key={idx} test={ test }></Card>
         })
+    }
+
+    const test = (event) => {
+        alert(`Selected card ${event.target.key}`)
     }
 
     const rotateLeft = () => {
