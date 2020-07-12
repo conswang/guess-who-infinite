@@ -29,8 +29,12 @@ export default (props) => {
     return(
         <div className="question-container">
             <div className="question">
-                <button onClick={ ask }> Ask! </button>
-                <input type="text" value={ question } onChange={ handleQuestion } onKeyDown={ handleEnter }></input>
+                <h1 onClick={ ask }> Ask! </h1>
+                <div className="question-input">
+                    <input type="text" value={ question } onChange={ handleQuestion } onKeyDown={ handleEnter }></input>
+                    <button onClick={ () => props.question(question) }> Send </button>
+                </div>
+                
             </div>
             <h2 className="reply"> YES! </h2>
         </div>

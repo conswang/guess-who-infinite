@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Landing from './components/Landing';
+import CharacterContainer from './components/CharacterContainer';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import io from 'socket.io-client';
 import { config } from './config/config.js';
@@ -17,6 +18,9 @@ function App() {
       <Switch>
         <Route path="/game">
           <Game socket={ socket } />
+        </Route>
+        <Route path="/test">
+          <CharacterContainer socket={ socket } />
         </Route>
         <Route path="/select">
           <CharacterSelect socket={ socket } />

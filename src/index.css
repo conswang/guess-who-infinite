@@ -147,7 +147,7 @@ body {
   
 }
 
-.question-container button, h2 {
+.question-container h1, h2 {
   font-family: var(--pixel-font);
   background: linear-gradient(180deg, #5E1CEC 0%, #F74128 100%), #FFFFFF;
   -webkit-background-clip: text;
@@ -155,7 +155,7 @@ body {
   font-size: 36px;
 }
 
-.question-container button {
+.question-container h1 {
   cursor: pointer;
   border: none;
   font-size: 36px;
@@ -171,6 +171,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.question-input {
+  width: 100%;
+  display: flex;
+}
+
+.question-input button {
+  width: 30%;
 }
 
 .reply {
@@ -197,6 +206,28 @@ body {
   line-height: 42px;
   text-align: center;
   color: #333333;
+}
+
+.character-container {
+  background-color: pink;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-items: center;
+  grid-gap: 10px;
+}
+
+.card-img {
+  width: 175px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.game-container {
+  margin: 0 auto;
+}
+
+.gallery {
+  width: 50%;
 }
 
 @media only screen 
