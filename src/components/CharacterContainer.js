@@ -10,8 +10,8 @@ export default (props) => {
     const populateCards = () => {
         return data.map((card, idx) => {
             return <Card img={card.img} 
-                         selected={card.selected} 
-                         idx={idx} className="card-img" 
+                         isSelect={card.selected} 
+                         idx={idx}
                          selectCard={selectCard} 
                          inFinalSelectMode={props.inFinalSelectMode} 
                          callback={ props.callback }>
