@@ -209,7 +209,7 @@ body {
 }
 
 .character-container {
-  width: 750px;
+  width: 100%;
   height: 450px;
   background-color: #232323;
   display: grid;
@@ -248,6 +248,15 @@ body {
 .eliminate {
   opacity: 0.2;
   border: 1px solid red;
+}
+
+.switch {
+  width: 100%;
+}
+
+.select-answer {
+  border: 1px solid green;
+  opacity: 1;
 }
 
 @media only screen 

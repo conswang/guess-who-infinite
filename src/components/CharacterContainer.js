@@ -2,7 +2,8 @@ import React, { useState} from 'react';
 import Card from './Card';
 
 export default () => {
-    const [index, setIndex] = useState([0, 8])
+    const [index, setIndex] = useState([0, 8]);
+    const [guess, setGuess] = useState(false);
     
     const data = [
         { img: 'https://cdn.costumewall.com/wp-content/uploads/2017/02/robin-young-justice.jpg' },
@@ -45,8 +46,7 @@ export default () => {
 
     const populateCards = () => {
         return data.map((card, idx) => {
-            // console.log(idx)
-            return <Card img={card.img} idx={idx} cardIdx={ cardIdx }></Card>
+            return <Card img={card.img} idx={idx} cardIdx={ cardIdx } guess={ guess }></Card>
         })
     }
 
@@ -62,19 +62,23 @@ export default () => {
 
     const rotateRight = () => {
         if(index[1] >= populateCards().length - 8) return
-        const newIdx = index.map(idx => idx + 9);
+        const newIdx = index.map(idx => idx + 8);
         setIndex(newIdx);
     }
 
     return (
-        <div className="grid-container">
-            {console.log(index)}
-            <button onClick={ rotateLeft }>left</button>
-            <div className="character-container">
-                { populateCards().slice(index[0], index[1])}
+        <div>
+            <button className='switch' onClick={ () => setGuess(!guess) }> GUESS </button>
+            <div className="grid-container">
+                {console.log(index)}
+                <button onClick={ rotateLeft }>left</button>
+                <div className="character-container">
+                    { populateCards().slice(index[0], index[1])}
+                </div>
+                <button onClick={ rotateRight }>right</button>
             </div>
-            <button onClick={ rotateRight }>right</button>
         </div>
+        
         
     )
 }
