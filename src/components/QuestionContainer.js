@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default () => {
+export default (props) => {
     let [question, setQuestion] = useState('');
 
     const handleQuestion = event => {
