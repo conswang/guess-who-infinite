@@ -6,16 +6,14 @@ import CharacterContainer from './CharacterContainer';
 import { socket } from '../App';
 
 export default class Game extends React.Component {
-
+  
   state = {
     // status is ask | answer | wait
-    status: 'answer',
+    status: 'wait',
     question: '',
   }
 
   componentDidMount() {
-    const status = 'wait';
-    socket.emit('getTurn');
     socket.on('turn', turn =>
       this.setState({
         status: turn

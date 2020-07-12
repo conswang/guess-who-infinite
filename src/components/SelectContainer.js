@@ -13,6 +13,7 @@ export default class SelectContainer extends React.Component {
     console.log('I mounted')
     socket.on('startedQuestions', () => {
       this.props.callback('game');
+      socket.emit('getTurn');
     });
   }
 
