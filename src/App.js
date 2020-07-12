@@ -8,6 +8,7 @@ import io from 'socket.io-client';
 import { config } from './config/config.js';
 import CharacterSelect from './components/CharacterSelect';
 import SelectContainer from './components/SelectContainer';
+import Answer from './components/Answer';
 import Game from './components/Game';
 
 function App() {
@@ -18,13 +19,16 @@ function App() {
     <Router>
       <Switch>
         <Route path="/game">
-          <Game/>
+          <Game show={true}/>
         </Route>
         <Route path="/test">
-          <CharacterContainer/>
+          <CharacterContainer show={true}/>
         </Route>
         <Route path="/select">
-          <SelectContainer/>
+          <SelectContainer show={true}/>
+        </Route>
+        <Route path="/answer">
+          <Answer open={true}/>
         </Route>
         <Route path="/">
           <Landing

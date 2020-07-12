@@ -10,7 +10,7 @@ export default class SelectContainer extends React.Component {
 
   componentDidMount() {
     socket.on('startedQuestions', () => {
-      window.location = '/game'
+      this.props.callback('game');
     });
   }
 
