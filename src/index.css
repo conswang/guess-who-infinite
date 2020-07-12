@@ -135,13 +135,13 @@ body {
 }
 
 .question-container {
-  width: 80%;
+  width: 90%;
   background-color: #BDBDBD;
   margin: 0 auto;
   border-radius: 20px;
   padding: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   justify-content: center;
   align-items: center;
   
@@ -164,6 +164,8 @@ body {
 .question-container input {
   width: 70%;
   padding: 5px ;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 .question {
@@ -179,7 +181,9 @@ body {
 }
 
 .question-input button {
-  width: 30%;
+  width: 20%;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 .reply {
