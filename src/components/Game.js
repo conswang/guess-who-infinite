@@ -7,16 +7,24 @@ export default class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      socket: this.props.socket,
+      answerMode: false
     }
+  }
+
+  componentDidMount() {
+    this.props.socket.on('playerAsked', question => 
+      this.setState({
+        answerMode: true
+      })
+    )
   }
 
   render () {
     return (
       <div className='game-container'>
-        <Answer socket={this.state.socket}/>
-        <CharacterSelect/>
-        <QuestionContainer socket={this.state.socket}/>
+        <Answer socket={this.props.socket} show={this.state.answerMode}/>
+        <CharacterSelect socket={this.props.socket}/>
+        <QuestionContainer socket={this.props.socket}/>
       </div>
     );
   }

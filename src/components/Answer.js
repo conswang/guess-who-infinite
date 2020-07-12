@@ -41,10 +41,8 @@ export default function Answer(props) {
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        open modal
-      </button>
       <Modal
+        show = {props.show}
         className={classes.modal}
         open={open}
         onClose={handleClose}

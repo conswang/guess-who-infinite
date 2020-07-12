@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default (props) => {
     let [question, setQuestion] = useState('');
+    let [answer, setAnswer] = useState('?');
 
     const handleQuestion = event => {
         const letter = event.target.value;
@@ -9,8 +10,15 @@ export default (props) => {
     }
 
     const ask = () => {
-        alert(question)
+        props.socket.emit('ask', question);
     }
+
+    useEffect(() => {
+        props.socket.on('playerAnswered', (isTrue) => {
+            let answer = isTrue ? 'YES!' : 'NO!';
+            setAnswer(answer);
+        });
+    });
 
     const handleEnter = event => {
         if(event.key === 'Enter') {
