@@ -47,7 +47,7 @@ export default class Game extends React.Component {
           show={this.state.status === 'answer'}
           question={ this.state.question }
           answerCallback={ this.answerWasSent }/>
-        <CharacterSelect socket={this.props.socket}/>
+        <CharacterContainer socket={this.props.socket}/>
         <QuestionContainer 
           socket={this.props.socket}
           questionCallback={ this.questionWasAsked }/>
