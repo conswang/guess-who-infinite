@@ -16,7 +16,8 @@ export default class Game extends React.Component {
   componentDidMount() {
     this.props.socket.on('playerAsked', question => 
       this.setState({
-        answerMode: true
+        answerMode: true,
+        question: question
       })
     )
   }
@@ -38,7 +39,7 @@ export default class Game extends React.Component {
       <div className='game-container'>
         <Answer socket={this.props.socket} show={this.state.answerMode}/>
         <CharacterSelect socket={this.props.socket}/>
-        <QuestionContainer question={ this.setQuestion } socket={this.props.socket}/>
+        <QuestionContainer question={ this.state.question } socket={this.props.socket}/>
       </div>
     );
   }

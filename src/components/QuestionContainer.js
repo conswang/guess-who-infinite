@@ -32,7 +32,7 @@ export default (props) => {
                 <h1 onClick={ ask }> Ask! </h1>
                 <div className="question-input">
                     <input type="text" value={ question } onChange={ handleQuestion } onKeyDown={ handleEnter }></input>
-                    <button onClick={ () => props.question(question) }> Send </button>
+                    <button onClick={ () => ask(question) }> Send </button>
                 </div>
                 
             </div>
