@@ -45,7 +45,7 @@ export default class Game extends React.Component {
       this.props.show
         ?<div className='game-container'>
           <Answer
-            show={this.state.status === 'answer'}
+            open={this.state.status === 'answer'}
             question={ this.state.question }
             answerCallback={ this.answerWasSent }/>
           <CharacterContainer />

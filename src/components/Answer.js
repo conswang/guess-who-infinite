@@ -44,9 +44,9 @@ export default function Answer(props) {
   return (
     <div>
       <Modal
-        show = {props.show}
+        show={props.show}
         className={classes.modal}
-        open={open}
+        open={props.open}
         onClose={handleClose}
         closeAfterTransition
         disableBackdropClick={true}
