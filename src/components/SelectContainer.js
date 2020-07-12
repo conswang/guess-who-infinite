@@ -1,5 +1,6 @@
 import React from 'react';
 import CharacterContainer from './CharacterContainer';
+import { socket } from '../App';
 
 export default class SelectContainer extends React.Component {
   state = {
@@ -8,14 +9,14 @@ export default class SelectContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.props.socket.on('startedQuestions', () => {
-      window.location = '/game'
+    socket.on('startedQuestions', () => {
+      this.props.callback('game');
     });
   }
 
   cardWasSelected = (idx) => {
-    this.props.socket.emit('selectCard', idx);
-    this.props.socket.on('waitingForSelection', () => {
+    socket.emit('selectCard', idx);
+    socket.on('waitingForSelection', () => {
       this.setState({
         status: 'wait'
       })
@@ -24,9 +25,11 @@ export default class SelectContainer extends React.Component {
 
   render() {
     return (
-      this.state.status === 'select'
-        ? <CharacterContainer selectCardCallback={this.cardWasSelected}/>
-        : <p>Waiting for selection</p>
+      this.props.show ?
+        this.state.status === 'select'
+          ? <CharacterContainer selectCardCallback={this.cardWasSelected}/>
+          : <p>Waiting for selection</p>
+        :<></>
     );
   }
 }

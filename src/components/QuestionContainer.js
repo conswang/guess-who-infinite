@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { socket } from '../App';
 
 export default (props) => {
     let [question, setQuestion] = useState('');
@@ -10,12 +11,12 @@ export default (props) => {
     }
 
     const ask = () => {
-        props.socket.emit('ask', question);
+        socket.emit('ask', question);
         props.questionCallback();
     }
 
     useEffect(() => {
-        props.socket.on('playerAnswered', (isTrue) => {
+        socket.on('playerAnswered', (isTrue) => {
             let answer = isTrue ? 'YES!' : 'NO!';
             setAnswer(answer);
         });
