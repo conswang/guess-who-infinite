@@ -46,7 +46,7 @@ export default () => {
 
     const populateCards = () => {
         return data.map((card, idx) => {
-            return <Card img={card.img} idx={idx} cardIdx={ cardIdx } guess={ guess }></Card>
+            return <Card img={card.img} idx={idx} cardIdx={ cardIdx } guess={ guess } className="card-img"></Card>
         })
     }
 
@@ -56,7 +56,7 @@ export default () => {
 
     const rotateLeft = () => {
         if(index[0] === 0) return
-        const newIdx = index.map(idx => idx - 9)
+        const newIdx = index.map(idx => idx - 8)
         setIndex(newIdx);
     }
 
