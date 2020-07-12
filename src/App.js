@@ -28,7 +28,7 @@ function App() {
           <SelectContainer show={true}/>
         </Route>
         <Route path="/answer">
-          <Answer open={true}/>
+          <Answer open={true} question='Is your character blonde?'/>
         </Route>
         <Route path="/">
           <Landing
