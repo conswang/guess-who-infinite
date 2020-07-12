@@ -225,6 +225,12 @@ body {
   height: 200px;
   border-radius: 20px;
   border: 1px solid white;
+  cursor: pointer;
+  transition: 0.5s ease-in;
+}
+
+.card-img:hover {
+  border: 1px solid orange;
 }
 
 .game-container {
@@ -241,6 +247,7 @@ body {
 
 .eliminate {
   opacity: 0.2;
+  border: 1px solid red;
 }
 
 @media only screen 
