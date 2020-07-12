@@ -31,7 +31,7 @@ export default (props) => {
         }
         socket.emit('joinGame', name, join);
         socket.on('startedGame', () => {
-            window.location = '/select';
+            props.callback('select')
         });
     }
 
@@ -75,7 +75,7 @@ export default (props) => {
     }
 
     const inLobby = () => {
-        return lobby ? <LobbyRoom code={ code }/> :
+        return lobby ? <LobbyRoom code={ code } callback={ props.callback } /> :
               <div className="landing-form-container">
                 <div className="create-join-container">
                     <button onClick={() => {useSelect(!select)}} className={ select ? 'create select' : 'create'}> create game </button>
@@ -89,7 +89,8 @@ export default (props) => {
     }
 
     return(
-        <div className="landing-container">
+        props.show
+        ?<div className="landing-container">
             { console.log(`${code} hereeeeee`) }
             <div className="title">
                 <h3> Guess Who </h3>
@@ -98,5 +99,6 @@ export default (props) => {
 
             { inLobby() }
         </div>
+        : <></>
     )
 }

@@ -42,14 +42,16 @@ export default class Game extends React.Component {
 
   render () {
     return (
-      <div className='game-container'>
-        <Answer
-          show={this.state.status === 'answer'}
-          question={ this.state.question }
-          answerCallback={ this.answerWasSent }/>
-        <CharacterSelect />
-        <QuestionContainer questionCallback={ this.questionWasAsked }/>
-      </div>
+      this.props.show
+        ?<div className='game-container'>
+          <Answer
+            show={this.state.status === 'answer'}
+            question={ this.state.question }
+            answerCallback={ this.answerWasSent }/>
+          <CharacterContainer />
+          <QuestionContainer questionCallback={ this.questionWasAsked }/>
+        </div>
+        :<></>
     );
   }
 }

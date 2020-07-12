@@ -67,7 +67,7 @@ export default () => {
     }
 
     return (
-        <div>
+        <div className="character-wrapper">
             <button className='switch' onClick={ () => setGuess(!guess) }> GUESS </button>
             <div className="grid-container">
                 {console.log(index)}

@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+import { socket } from '../App';
 
 export default (props) => {
 
     useEffect(() => {
-        props.socket.on('startedGame', () => {
-            window.location = '/select';
+        socket.on('startedGame', () => {
+            props.callback('select')
         });
     });
 

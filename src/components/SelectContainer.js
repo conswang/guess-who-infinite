@@ -9,14 +9,14 @@ export default class SelectContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.props.socket.on('startedQuestions', () => {
+    socket.on('startedQuestions', () => {
       window.location = '/game'
     });
   }
 
   cardWasSelected = (idx) => {
-    this.props.socket.emit('selectCard', idx);
-    this.props.socket.on('waitingForSelection', () => {
+    socket.emit('selectCard', idx);
+    socket.on('waitingForSelection', () => {
       this.setState({
         status: 'wait'
       })
@@ -25,9 +25,11 @@ export default class SelectContainer extends React.Component {
 
   render() {
     return (
-      this.state.status === 'select'
-        ? <CharacterContainer selectCardCallback={this.cardWasSelected}/>
-        : <p>Waiting for selection</p>
+      this.props.show ?
+        this.state.status === 'select'
+          ? <CharacterContainer selectCardCallback={this.cardWasSelected}/>
+          : <p>Waiting for selection</p>
+        :<></>
     );
   }
 }

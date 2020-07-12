@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Landing from './components/Landing';
@@ -11,6 +11,8 @@ import SelectContainer from './components/SelectContainer';
 import Game from './components/Game';
 
 function App() {
+  // mode can be 'landing' | 'select' | 'game'
+  const [mode, setMode] = useState('landing');
 
   return (
     <Router>
@@ -25,7 +27,13 @@ function App() {
           <SelectContainer/>
         </Route>
         <Route path="/">
-          <Landing/>
+          <Landing
+            show={mode === 'landing'}
+            callback={setMode}/>
+          <SelectContainer
+            show={mode === 'select'}
+            callback={setMode}/>
+          <Game show={mode === 'game'}/>
         </Route>
       </Switch>
     </Router>
