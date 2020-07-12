@@ -190,22 +190,31 @@ body {
   font-family: 'Press Start 2P';
   font-style: normal;
   font-weight: normal;
-  font-size: 64px;
-  line-height: 64px;
   text-align: center;
   background: -webkit-linear-gradient(#5E1CEC, #F74128);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: 0.5em 0;
+  flex-wrap: wrap;
 }
 
 .answer-modal-question {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
-  line-height: 42px;
   text-align: center;
   color: #333333;
+  margin: 0.5em 0;
+  flex-wrap: wrap;
+}
+
+.answer-modal-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.answer-modal-button {
+  margin: 20px;
 }
 
 .character-container {
