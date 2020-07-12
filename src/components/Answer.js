@@ -26,53 +26,37 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Answer(props) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const answer = (isTrue) => {
     socket.emit('answer', isTrue);
     props.answerCallback();
-    handleClose();
   }
 
   return (
-    <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button>
-      <Modal
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        disableBackdropClick={true}
-        disableEscapeKeyDown={false}
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-          classes: {
-            root: classes.backDrop
-          }
-        }}
-      >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            <h2 className="answer-modal-title">Answer!</h2>
-            <p className="answer-modal-question">{props.question}</p>
-            <div className="answer-modal-button-container">
-              <Button className="answer-modal-button" variant='containedPrimary' onClick={() => answer(true)}>Yes</Button>
-              <Button className="answer-modal-button" variant='containedPrimary' onClick={() => answer(false)}>No</Button>
-            </div>
+    <Modal
+      className={classes.modal}
+      open={props.open}
+      closeAfterTransition
+      disableBackdropClick={true}
+      disableEscapeKeyDown={false}
+      BackdropComponent={Backdrop}
+      BackdropProps={{
+        timeout: 500,
+        classes: {
+          root: classes.backDrop
+        }
+      }}
+    >
+      <Fade in={props.open}>
+        <div className={classes.paper}>
+          <h2 className="answer-modal-title">Answer!</h2>
+          <p className="answer-modal-question">{props.question}</p>
+          <div className="answer-modal-button-container">
+            <Button className="answer-modal-button" variant='containedPrimary' onClick={() => answer(true)}>Yes</Button>
+            <Button className="answer-modal-button" variant='containedPrimary' onClick={() => answer(false)}>No</Button>
           </div>
-        </Fade>
-      </Modal>
-    </div>
+        </div>
+      </Fade>
+    </Modal>
   );
 }
