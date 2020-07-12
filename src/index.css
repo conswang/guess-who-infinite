@@ -270,6 +270,15 @@ body {
 
 .grid-container button {
   width: 20px;
+  border: none;
+}
+
+.left-btn {
+  background-color: #5E1CEC;
+}
+
+.right-btn {
+  background-color: #F64128;
 }
 
 .gallery {

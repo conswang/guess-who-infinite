@@ -44,11 +44,11 @@ export default (props) => {
     return (
         <div className="character-wrapper">
             <div className="grid-container">
-                <button onClick={ rotateLeft } className="fa fa-angle-left"></button>
+                <button onClick={ rotateLeft } className="left-btn" >&#9664;</button>
                 <div className="character-container">
                     { populateCards().slice(index[0], index[1]) }
                 </div>
-                <button onClick={ rotateRight } className="fa fa-angle-right"></button>
+                <button onClick={ rotateRight } className="right-btn" >&#9654;</button>
             </div>
         </div>
     )
