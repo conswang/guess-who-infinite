@@ -68,17 +68,14 @@ export default () => {
 
     return (
         <div className="character-wrapper">
-            <button className='switch' onClick={ () => setGuess(!guess) }> GUESS </button>
+            <button className='switch' onClick={ () => setGuess(!guess) }> Click Here to Guess </button>
             <div className="grid-container">
-                {console.log(index)}
-                <button onClick={ rotateLeft }>left</button>
+                <button onClick={ rotateLeft } className="fa fa-angle-left"></button>
                 <div className="character-container">
-                    { populateCards().slice(index[0], index[1])}
+                    { populateCards().slice(index[0], index[1]) }
                 </div>
-                <button onClick={ rotateRight }>right</button>
+                <button onClick={ rotateRight } className="fa fa-angle-right"></button>
             </div>
         </div>
-        
-        
     )
 }

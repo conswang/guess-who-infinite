@@ -235,11 +235,12 @@ body {
   border-radius: 20px;
   border: 1px solid white;
   cursor: pointer;
-  transition: 0.5s ease-in;
+  transition: 1s ease-in;
 }
 
 .card-img:hover {
   border: 1px solid orange;
+  box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5);;
 }
 
 .game-container {
@@ -248,8 +249,25 @@ body {
   height: 100vh;
 }
 
+.game-container button {
+  border: none;
+  cursor: pointer;
+  transition: 1s ease-in;
+}
+
+.game-container button:hover {
+  background-color: black;
+  color: white;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+
 .grid-container {
   display: flex;
+}
+
+.grid-container button {
+  width: 20px;
 }
 
 .gallery {
@@ -266,7 +284,7 @@ body {
 }
 
 .character-wrapper {
-  
+  /* width: 90%; */
 }
 
 .select-answer {
