@@ -10,6 +10,7 @@ export default class SelectContainer extends React.Component {
   }
 
   componentDidMount() {
+    console.log('I mounted')
     socket.on('startedQuestions', () => {
       this.props.callback('game');
     });
@@ -38,7 +39,7 @@ export default class SelectContainer extends React.Component {
         this.state.status === 'select'
           ? <>
               <button className='switch' onClick={ () => this.selectCard(this.state.selectedIdx)}>Select this Card</button>
-              <CharacterContainer callback={this.updateSelectedIdx}/>
+              <CharacterContainer callback={this.updateSelectedIdx} inFinalSelectMode={true}/>
             </>
           : <p>Waiting for selection</p>
         :<></>

@@ -45,7 +45,7 @@ export default (props) => {
 
     const populateCards = () => {
         return data.map((card, idx) => {
-            return <Card img={card.img} idx={idx} className="card-img" callback={ props.callback }></Card>
+            return <Card img={card.img} idx={idx} className="card-img" inFinalSelectMode={props.inFinalSelectMode} callback={ props.callback }></Card>
         })
     }
 
