@@ -68,7 +68,7 @@ export default () => {
 
     return (
         <div className="character-wrapper">
-            <button className='switch' onClick={ () => setGuess(!guess) }> Click Here to Guess </button>
+            <button className='guess' onClick={ () => setGuess(!guess) }> Click Here to Guess </button>
             <div className="grid-container">
                 <button onClick={ rotateLeft } className="fa fa-angle-left"></button>
                 <div className="character-container">
