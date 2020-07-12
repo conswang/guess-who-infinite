@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
+import { socket } from '../App';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -35,7 +36,7 @@ export default function Answer(props) {
   };
 
   const answer = (isTrue) => {
-    props.socket.emit('answer', isTrue);
+    socket.emit('answer', isTrue);
     props.answerCallback();
     handleClose();
   }
