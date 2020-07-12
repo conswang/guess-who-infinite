@@ -56,9 +56,9 @@ export default class Game extends React.Component {
     console.log(this.state.guessedIdx)
     if (this.state.guessedIdx !== '') {
       socket.emit('guess', this.state.guessedIdx);
-      socket.on('gameEnded', ({ winner, guess }) => {
-        console.log(`Winner: ${winner}`);
-        console.log(`Guess was ${guess}`);
+      socket.on('gameEnded', (result) => {
+        this.props.setModeCallback('gameEnd');
+        this.props.setResultCallback(result);
       });
     }
   }

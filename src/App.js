@@ -10,10 +10,15 @@ import CharacterSelect from './components/CharacterSelect';
 import SelectContainer from './components/SelectContainer';
 import Answer from './components/Answer';
 import Game from './components/Game';
+import GameEnd from './components/GameEnd';
 
 function App() {
-  // mode can be 'landing' | 'select' | 'game'
+  // mode can be 'landing' | 'select' | 'game' | 'gameEnd
   const [mode, setMode] = useState('landing');
+  const [result, setResult] = useState({
+    winner: '',
+    guess: false
+  });
 
   return (
     <Router>
@@ -37,7 +42,13 @@ function App() {
           <SelectContainer
             show={mode === 'select'}
             callback={setMode}/>
-          <Game show={mode === 'game'}/>
+          <Game
+            show={mode === 'game'}
+            setModeCallback={setMode}
+            setResultCallback={setResult}/>
+          <GameEnd
+            show={mode === 'gameEnd'}
+            result={result}/>
         </Route>
       </Switch>
     </Router>
