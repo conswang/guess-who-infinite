@@ -11,8 +11,8 @@ export default (props) => {
     let [code, setCode] = useState('');
 
     let createGame = () => {
-        if(name === '' || category === '') {
-            alert("PLEASE ENTER A NAME AND SELECT A CATEGORY")
+        if(name === '') {
+            alert("PLEASE ENTER A NAME")
             return
         }
         socket.emit('createGame', name);
