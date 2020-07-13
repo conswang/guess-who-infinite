@@ -57,8 +57,15 @@ export default (props) => {
           </span>
         </div>
       </div>
-      {/* <h2 className="reply"> {answer} </h2> */}
-      <h2 className="reply"> Yes! </h2>
+      <div class="wrapper">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <h2 className="reply"> Yes! </h2>
+      </div>
     </div>
   );
 };
