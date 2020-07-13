@@ -38,7 +38,7 @@ export default function GameEnd(props) {
         { image2 }
       </div>
       <div className="end-div">
-        <div className="username">{props.result.guess ? "Correct Guess -" : "Incorrect Guess - "}</div>
+        <div className="username">{props.result.youWin ? "Correct Guess -" : "Incorrect Guess - "}</div>
         <div className="message-div">
           <span>
             {props.result.youWin
