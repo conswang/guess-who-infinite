@@ -123,6 +123,7 @@ body {
 .footer-container a {
   color: white;
   font-size: 12px;
+  text-decoration: none;
 }
 
 .footer-container ul {
@@ -395,7 +396,7 @@ body {
 }
 
 .select-answer {
-  border: 1px solid green;
+  border: 1px solid green !important;
   opacity: 1;
 }
 
@@ -418,7 +419,9 @@ body {
 }
 
 .waitingRoom h1 {
-  margin-bottom: 100px;
+  margin-top: 100px;
+  font-size: 18px !important;
+  text-align: center;
 }
 
 /* waiting for response animation */
@@ -610,6 +613,7 @@ body {
 
 .end-screen h1 {
   font-size: xxx-large;
+  text-align: center;
 }
 
 .end-screen div {

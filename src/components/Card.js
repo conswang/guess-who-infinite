@@ -12,6 +12,16 @@ export default (props) => {
         }
     }
 
+    const chosenCard = () => {
+        if(select && props.inFinalSelectMode) {
+            return '.card-img select-answer'
+        } else if(props.isSelect) {
+            return 'card-img eliminate'
+        } else {
+            return 'card-img'
+        }
+    }
+
     return(
         <img
             className={ props.isSelect ? 'card-img eliminate' : 'card-img' }
@@ -21,3 +31,6 @@ export default (props) => {
         </img>
     )
 }
+// .select-answer
+
+// props.isSelect ? 'card-img eliminate' : 'card-img'
