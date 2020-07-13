@@ -27,6 +27,9 @@ function App() {
         <Route path="/game">
           <Game show={true}/>
         </Route>
+        <Route path="/css">
+          <GameEnd />
+        </Route>
         <Route path="/test">
           <CharacterContainer show={true}/>
         </Route>
