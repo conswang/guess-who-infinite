@@ -48,7 +48,7 @@ export default function Answer(props) {
       }}
     >
       <Fade in={props.open}>
-        <div className={classes.paper}>
+        <div className={classes.paper} id="modal-container">
           <h2 className="answer-modal-title">Answer!</h2>
           <p className="answer-modal-question">{props.question}</p>
           <div className="answer-modal-button-container">
