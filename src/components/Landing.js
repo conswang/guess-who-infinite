@@ -60,7 +60,7 @@ export default (props) => {
             {console.log(lobby)}
                 <label for="category">category</label>
                 <input name="category" id="category" type="text" value={ category } onChange={ handleCategoryChange } required></input>
-                <label>no.of cards</label>
+                <br></br>
                 <span className="right-side-button">
                     <button type="submit" className="submit" onClick={createGame}> CREATE </button>
                 </span>
