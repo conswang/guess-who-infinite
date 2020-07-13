@@ -71,8 +71,12 @@ export default class Game extends React.Component {
             open={this.state.status === 'answer'}
             question={ this.state.question }
             answerCallback={ this.answerWasSent }/>
-          <button onClick={ this.readyToGuess }>Ready to Guess</button>
-          <button onClick={ this.submitGuess }>Submit Guess</button>
+
+          <div className="guess-button-container">
+            <button onClick={ this.readyToGuess }>Ready to Guess</button>
+            <button onClick={ this.submitGuess }>Submit Guess</button>
+          </div>
+          
           <CharacterContainer
             inFinalSelectMode={ this.state.status === 'guess' }
             callback={ this.updateGuessedIdx } />

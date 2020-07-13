@@ -45,6 +45,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: 2s;
+  overflow: hidden;
 }
 
 .landing-form-container {
@@ -148,13 +149,15 @@ body {
   width: 90%;
   background-color: #BDBDBD;
   margin: 0 auto;
-  border-radius: 20px;
   padding: 20px;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   justify-content: center;
   align-items: center;
-  
+}
+
+.question-container button {
+  height: 100%;
 }
 
 .question-container h1, h2 {
@@ -194,6 +197,17 @@ body {
   width: 20%;
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
+}
+
+.guess-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.guess-button-container button {
+  height: 100%;
+  width: 100%;
+  background-color: #E0E0E0;
 }
 
 .reply {
@@ -240,7 +254,6 @@ body {
   grid-template-rows: 1fr 1fr;
   justify-items: center;
   align-items: center;
-  /* grid-gap: 2px; */
 }
 
 .card-img {
@@ -259,7 +272,7 @@ body {
 
 .game-container {
   margin: 0 auto;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -285,6 +298,8 @@ body {
   width: 20px;
   border: none;
   color: white;
+  cursor: pointer;
+  transition: 1s ease-in;
 }
 
 .left-btn {
@@ -364,11 +379,40 @@ and (min-device-width : 768px) {
   }
 
   .card-img {
-    width: 125px;
-    height: 175px;
+    /* width: 125px;
+    height: 175px; */
+    min-width: 100%;
+    min-height: 100%;
+    display: block;
   }
 
   .character-container {
+    height: 75vh;
+    grid-gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .game-container {
+    margin: 0 auto;
+    width: 100vw;
     height: 100vh;
+    /* overflow: hidden; */
+    display: grid;
+    grid-template-rows: 2fr 15fr 3fr;
+  }
+
+  .question-container {
+    width: 100%;
+    background-color: #BDBDBD;
+    border-radius: 0;
+    box-sizing: border-box;
+    padding: 5px;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .question-container span {
+    width: 70%;
+    margin: 0 auto;
   }
 }
