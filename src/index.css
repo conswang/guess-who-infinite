@@ -3,6 +3,7 @@
   padding: 0;
   --background-theme: linear-gradient(180deg, #5e1cec 0%, #f74128 100%), #ffffff;
   --pixel-font: "Press Start 2P";
+  font-family: var(--pixel-font);
 }
 
 body {
@@ -98,7 +99,7 @@ body {
 }
 
 .submit {
-  width: 30%;
+  width: 40%;
   background: white;
   border: 1px solid white;
   color: #5e1cec;

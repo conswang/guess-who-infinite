@@ -83,8 +83,8 @@ export default (props) => {
         return lobby ? <LobbyRoom code={ code } callback={ props.callback } /> :
               <div className="landing-form-container">
                 <div className="create-join-container">
-                    <button onClick={() => {useSelect(!select)}} className={ select ? 'create select' : 'create'}> create game </button>
-                    <button onClick={() => {useSelect(!select)}} className={ select ? 'join' : 'join select'}> join game</button>
+                    <button onClick={() => {useSelect(!select)}} className={ select ? 'create select' : 'create'}> create </button>
+                    <button onClick={() => {useSelect(!select)}} className={ select ? 'join' : 'join select'}> join</button>
                 </div>
 
                 <label for="name">name</label>
