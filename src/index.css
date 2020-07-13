@@ -399,6 +399,13 @@ body {
   opacity: 1;
 }
 
+/* Character Select */
+.character-select-container {
+  height: 100vh;
+  background-color: #f74128;
+}
+/* Character Select */
+
 .waitingRoom {
   height: 100vh;
   width: 100vw;
