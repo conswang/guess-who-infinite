@@ -46,7 +46,9 @@ export default class SelectContainer extends React.Component {
               <CharacterContainer
                 callback={this.updateSelectedIdx}
                 inFinalSelectMode={true}
-                category={this.props.category} />
+                category={this.props.category} 
+                images={this.props.images}
+                setImages={this.props.setImages} />
               { chooseButton }
             </>
           : <div className="waitingRoom">

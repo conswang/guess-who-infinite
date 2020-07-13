@@ -83,7 +83,9 @@ export default class Game extends React.Component {
           <CharacterContainer
             inFinalSelectMode={ this.state.status === 'guess' }
             callback={ this.updateGuessedIdx }
-            category={ this.props.category }/>
+            category={ this.props.category }
+            images={this.props.images}
+            setImages={this.props.setImages}/>
           <QuestionContainer questionCallback={ this.questionWasAsked }/>
         </div>
         :<></>
