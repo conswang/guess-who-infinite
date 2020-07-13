@@ -6,7 +6,7 @@ export default class SelectContainer extends React.Component {
   state = {
     // status can be select | wait
     status: 'select',
-    selectedIdx: '',
+    selectedIdx: null,
   }
 
   componentDidMount() {
@@ -24,7 +24,7 @@ export default class SelectContainer extends React.Component {
   }
 
   selectCard = (idx) => {
-    if (idx !== '') {
+    if (idx !== null) {
       socket.emit('selectCard', idx);
       socket.on('waitingForSelection', () => {
         this.setState({
@@ -35,12 +35,16 @@ export default class SelectContainer extends React.Component {
   }
 
   render() {
+    let chooseButton = this.state.selectedIdx !== null
+      ? <button className='switch' onClick={ () => this.selectCard(this.state.selectedIdx)}>Submit</button>
+      : undefined
     return (
       this.props.show ?
         this.state.status === 'select'
           ? <>
-              <button className='switch' onClick={ () => this.selectCard(this.state.selectedIdx)}>Select this Card</button>
+              <h3>Choose your Card</h3>
               <CharacterContainer callback={this.updateSelectedIdx} inFinalSelectMode={true}/>
+              { chooseButton }
             </>
           : <div className="waitingRoom">
               <div class="loader"></div>
