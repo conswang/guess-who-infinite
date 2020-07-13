@@ -20,6 +20,7 @@ function App() {
     guess: false
   });
   const [category, setCategory] = useState(undefined);
+  const [images, setImages] = useState(config.DEFAULT_IMAGES);
 
   return (
     <Router>
@@ -44,12 +45,16 @@ function App() {
           <SelectContainer
             show={mode === 'select'}
             callback={setMode}
-            category={category}/>
+            category={category}
+            images={images}
+            setImages={setImages}/>
           <Game
             show={mode === 'game'}
             setModeCallback={setMode}
             setResultCallback={setResult}
-            category={category}/>
+            category={category}
+            images={images}
+            setImages={setImages}/>
           <GameEnd
             show={mode === 'gameEnd'}
             result={result}/>
