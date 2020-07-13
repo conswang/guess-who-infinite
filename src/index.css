@@ -535,10 +535,11 @@ body {
   }
 }
 
-/* Congrats to the winner animation */
-.winner-screen {
-  height: 100vh;
+/* End Screen */
+.end-screen {
   width: 100vw;
+  height: 100vh;
+  color: #fff;
   background: var(--background-theme);
   display: flex;
   flex-direction: column;
@@ -546,146 +547,87 @@ body {
   justify-content: center;
 }
 
-.winner-screen svg {
-  display: block;
-  font: 10.5em "Montserrat";
-  width: 758px;
-  height: 300px;
+.end-screen h1 {
+  font-size: xxx-large;
 }
 
-.winner-div {
-  display: flex;
-  margin-bottom: 150px;
+.end-screen div {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.winner-div img {
-  height: 100px;
-}
-
-.winner-screen h2 {
+.end-div {
   text-align: center;
-  color: white;
-  padding-top: 32px;
 }
 
-.text-copy {
-  fill: none;
-  stroke: white;
-  stroke-dasharray: 6% 29%;
-  stroke-width: 5px;
-  stroke-dashoffset: 0%;
-  animation: stroke-offset 5.5s infinite linear;
+.username {
+  font-size: large;
+  animation: showup 7s infinite;
 }
 
-.text-copy:nth-child(1) {
-  stroke: #5e1cec;
-  animation-delay: -1;
+.message-div {
+  font-size: large;
+  width: 0px;
+  animation: reveal 7s infinite;
 }
 
-.text-copy:nth-child(2) {
-  stroke: #840037;
-  animation-delay: -2s;
+.message-div span {
+  margin-left: -355px;
+  animation: slidein 7s infinite;
 }
 
-.text-copy:nth-child(3) {
-  stroke: #f64128;
-  animation-delay: -3s;
-}
-
-.text-copy:nth-child(4) {
-  stroke: #bd0034;
-  animation-delay: -4s;
-}
-
-.text-copy:nth-child(5) {
-  stroke: #fdb731;
-  animation-delay: -5s;
-}
-
-@keyframes stroke-offset {
-  100% {
-    stroke-dashoffset: -35%;
-  }
-}
-
-/* Dot animation */
-.wrapper {
-  width: 141px;
-  height: 33px;
-  margin-left: 90px;
-  transform: translate(-50%, -50%);
-}
-.circle {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  border-radius: 50%;
-  background-color: #fff;
-  left: 15%;
-  transform-origin: 50%;
-  animation: circle 0.5s alternate infinite ease;
-}
-
-@keyframes circle {
+@keyframes showup {
   0% {
-    top: 60px;
-    height: 5px;
-    border-radius: 50px 50px 25px 25px;
-    transform: scaleX(1.7);
+    opacity: 0;
   }
-  40% {
-    height: 20px;
-    border-radius: 50%;
-    transform: scaleX(1);
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
   }
   100% {
-    top: 0%;
+    opacity: 0;
   }
-}
-.circle:nth-child(2) {
-  left: 45%;
-  animation-delay: 0.2s;
-}
-.circle:nth-child(3) {
-  left: auto;
-  right: 15%;
-  animation-delay: 0.3s;
-}
-.shadow {
-  width: 20px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 62px;
-  transform-origin: 50%;
-  z-index: -1;
-  left: 15%;
-  filter: blur(1px);
-  animation: shadow 0.5s alternate infinite ease;
 }
 
-@keyframes shadow {
+@keyframes slidein {
   0% {
-    transform: scaleX(1.5);
+    margin-left: -800px;
   }
-  40% {
-    transform: scaleX(1);
-    opacity: 0.7;
+  20% {
+    margin-left: -800px;
+  }
+  35% {
+    margin-left: 0px;
   }
   100% {
-    transform: scaleX(0.2);
-    opacity: 0.4;
+    margin-left: 0px;
   }
 }
-.shadow:nth-child(4) {
-  left: 45%;
-  animation-delay: 0.2s;
-}
-.shadow:nth-child(5) {
-  left: auto;
-  right: 15%;
-  animation-delay: 0.3s;
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+  20% {
+    opacity: 1;
+    width: 0px;
+  }
+  30% {
+    width: auto;
+    margin-left: 8px;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: auto;
+    margin-left: 8px;
+  }
 }
 
 @media only screen and (min-device-width: 768px) {
