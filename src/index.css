@@ -54,7 +54,7 @@ body {
 .landing-form-container {
   width: 70%;
   margin: 0 auto;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--pixel-font);
   font-style: normal;
   font-weight: normal;
   border: 2px solid white;
@@ -153,7 +153,7 @@ body {
 
 .lobby-container {
   padding: 40px;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--pixel-font);
 }
 
 .lobby-container h1 {
@@ -241,6 +241,10 @@ body {
   margin-top: 16px;
 }
 
+#modal-container {
+  background-color: #bdbdbd;
+}
+
 .answer-modal-title {
   font-family: "Press Start 2P";
   font-style: normal;
@@ -256,16 +260,16 @@ body {
 .answer-modal-question {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   text-align: center;
-  color: #333333;
-  margin: 0.5em 0;
+  color: #000;
+  margin: 1em 0;
   flex-wrap: wrap;
 }
 
 .answer-modal-button-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .answer-modal-button {
@@ -473,7 +477,7 @@ body {
   font-weight: normal;
   letter-spacing: 4px;
   text-transform: uppercase;
-  font-family: "Audiowide";
+  font-family: var(--pixel-font);
   color: #fff;
   animation-name: bounce;
   animation-duration: 4s;
