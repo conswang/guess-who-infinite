@@ -124,6 +124,17 @@ body {
   border-bottom: 0 !important;
 }
 
+.button-select {
+  font-family: var(--pixel-font);
+  width: 100%;
+  font-size: 18px;
+  color: white;
+  background-color: #F64128;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
 .normalize-bot {
   display: flex;
   flex-direction: column;
@@ -132,6 +143,7 @@ body {
 .choose-label {
   text-align: center;
   font-size: 48px;
+  font-family: var(--pixel-font);
   text-decoration: none;
   background-color: #5E1CEC;
   color: white;
@@ -217,6 +229,7 @@ body {
   align-items: center;
 }
 .guess-button-container button {
+  font-family: var(--pixel-font);
   height: 100%;
   width: 100%;
   font-size: 36px;

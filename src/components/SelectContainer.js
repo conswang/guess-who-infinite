@@ -36,7 +36,7 @@ export default class SelectContainer extends React.Component {
 
   render() {
     let chooseButton = this.state.selectedIdx !== null
-      ? <button className='switch' onClick={ () => this.selectCard(this.state.selectedIdx)}>Submit</button>
+      ? <button className='button-select' onClick={ () => this.selectCard(this.state.selectedIdx)}> Confirm Card </button>
       : undefined
     return (
       this.props.show ?
