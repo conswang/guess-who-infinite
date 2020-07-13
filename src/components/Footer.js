@@ -9,7 +9,11 @@ export default () => {
                 <li><a href="https://www.linkedin.com/in/conswang/"> Constance </a></li>
             </ul>
 
-            <a href="https://www.mintbean.io/" className="mint"> mintbean </a>
+            <div className="footer-links" className="mint">
+                <a href="https://github.com/conswang/guess-who-infinite-client"> client </a>
+                <a href="https://github.com/conswang/guess-who-infinite-server"> server </a>
+                <a href="https://www.mintbean.io/"> mintbean </a>
+            </div>
         </div>
     )
 }
