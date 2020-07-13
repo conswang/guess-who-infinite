@@ -43,6 +43,7 @@ export default (props) => {
       <div className="question">
         <h1 onClick={ask}> Ask! </h1>
         <div className="question-input">
+          <span>
           <input
             type="text"
             value={question}
@@ -53,6 +54,7 @@ export default (props) => {
             {" "}
             Send{" "}
           </button>
+          </span>
         </div>
       </div>
       {/* <h2 className="reply"> {answer} </h2> */}
