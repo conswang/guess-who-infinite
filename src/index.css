@@ -100,15 +100,15 @@ body {
 
 .submit {
   width: 40%;
-  background: white;
   border: 1px solid white;
-  color: #5e1cec;
+  color: white;
   padding: 5px;
   margin-top: 10px;
   cursor: pointer;
   outline: none;
   transition: ease-in 0.5s;
-  font-weight: 600;
+  font-weight: 500;
+  background-color: transparent;
 }
 
 .right-side-button {
