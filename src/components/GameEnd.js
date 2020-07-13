@@ -1,5 +1,15 @@
 import React from "react";
 
+/*
+  result: {
+    youWin: boolean,
+    guess: boolean,
+    game: {
+      ... refer to the guess method in game.js and the game class for full definition
+    }
+  }
+*/
+
 export default function GameEnd(props) {
   return props.show ? (
     <div className="end-screen">
@@ -8,7 +18,7 @@ export default function GameEnd(props) {
         <div className="username">{props.result.winner}</div>
         <div className="message-div">
           <span>
-            {props.result.guess
+            {props.result.youWin
               ? "Congrats! You Win!"
               : "Better Luck Next Time..."}
           </span>
