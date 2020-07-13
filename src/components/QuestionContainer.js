@@ -64,7 +64,7 @@ export default (props) => {
         <div class="shadow"></div>
         <div class="shadow"></div>
         <div class="shadow"></div>
-        <h2 className="reply"> Yes! </h2>
+        <h2 className="reply"> {answer} </h2>
       </div>
     </div>
   );
