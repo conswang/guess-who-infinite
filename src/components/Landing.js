@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { socket } from '../App';
 import LobbyRoom from './LobbyRoom';
 
@@ -10,12 +10,19 @@ export default (props) => {
     let [join, setJoin] = useState('');
     let [code, setCode] = useState('');
 
+    useEffect(() => {
+        socket.on("startedGame", (category) => {
+          props.setCategoryCallback(category);
+          props.callback("select");
+        });
+      });
+
     let createGame = () => {
         if(name === '') {
             alert("PLEASE ENTER A NAME")
             return
         }
-        socket.emit('createGame', name);
+        socket.emit('createGame', name, category);
         socket.on('createdGame', joinCode => {
             console.log(joinCode);
             setCode(joinCode);
@@ -31,9 +38,6 @@ export default (props) => {
             return
         }
         socket.emit('joinGame', name, join);
-        socket.on('startedGame', () => {
-            props.callback('select')
-        });
     }
 
     const handleNameChange = event => {
