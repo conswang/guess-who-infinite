@@ -57,7 +57,8 @@ function App() {
             setImages={setImages}/>
           <GameEnd
             show={mode === 'gameEnd'}
-            result={result}/>
+            result={result}
+            images={images}/>
         </Route>
       </Switch>
     </Router>

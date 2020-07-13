@@ -622,9 +622,25 @@ body {
   text-align: center;
 }
 
+.ending-images-div div {
+  display: flex;
+  justify-content: space-between;
+  margin: 10%;
+}
+
+.ending-card-div div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .username {
   font-size: large;
   animation: showup 7s infinite;
+}
+
+.ending-div-name {
+  margin: 0.5em;
 }
 
 .message-div {

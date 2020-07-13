@@ -11,11 +11,34 @@ import React from "react";
 */
 
 export default function GameEnd(props) {
+
+  const getImage = (player) => {
+    const imageSrc = props.images[player.selectedCard].img;
+    return (
+      <div className="ending-card-div">
+        <img src={imageSrc} className='card-img'></img>
+        <h3 className="ending-div-name">{player.name}</h3>
+      </div>
+    )
+  }
+
+  let image1;
+  let image2;
+  
+  if (props.result.game) {
+    image1 = getImage(props.result.game.player1);
+    image2 = getImage(props.result.game.player2);
+  }
+
   return props.show ? (
     <div className="end-screen">
       <h1>Game Over!</h1>
+      <div className="ending-images-div">
+        { image1 }
+        { image2 }
+      </div>
       <div className="end-div">
-        <div className="username">{props.result.winner}</div>
+        <div className="username">{props.result.guess ? "Correct Guess -" : "Incorrect Guess - "}</div>
         <div className="message-div">
           <span>
             {props.result.youWin
