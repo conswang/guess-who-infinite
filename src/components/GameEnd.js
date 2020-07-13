@@ -32,7 +32,7 @@ export default function GameEnd(props) {
 
   return props.show ? (
     <div className="end-screen">
-      <h1>Game Over!</h1>
+      <h1>{props.result.youWin ? "Congrats!" : "Game Over!"}</h1>
       <div className="ending-images-div">
         { image1 }
         { image2 }
