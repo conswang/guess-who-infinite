@@ -41,7 +41,7 @@ export default class SelectContainer extends React.Component {
     return (
       this.props.show ?
         this.state.status === 'select'
-          ? <>
+          ? <div className="character-select-container">
               <h1 className="choose-label">Choose your card</h1>
               <CharacterContainer
                 callback={this.updateSelectedIdx}
@@ -50,7 +50,7 @@ export default class SelectContainer extends React.Component {
                 images={this.props.images}
                 setImages={this.props.setImages} />
               { chooseButton }
-            </>
+            </div>
           : <div className="waitingRoom">
               <div class="loader"></div>
               <h1>Waiting for other player...</h1>
