@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { socket } from '../App';
 import LobbyRoom from './LobbyRoom';
+import Footer from './Footer';
 
 export default (props) => {
     const [select, useSelect] = useState(true);
@@ -103,6 +104,7 @@ export default (props) => {
             </div>
 
             { inLobby() }
+            <Footer />
         </div>
         : <></>
     )

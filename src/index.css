@@ -120,6 +120,30 @@ body {
   box-shadow: 7px 7px 2px 1px rgba(0, 0, 255, 0.2);
 }
 
+.footer-container a {
+  color: white;
+  font-size: 12px;
+}
+
+.footer-container ul {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  list-style: none;
+}
+
+.footer-container li {
+  padding: 5px;
+}
+
+.mint {
+  position: absolute;
+  padding: 5px;
+  bottom: 0;
+  right: 0;
+}
+
 .select {
   border: 1px solid white !important;
   border-bottom: 0 !important;
