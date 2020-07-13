@@ -65,6 +65,7 @@ export default (props) => {
                 <span className="right-side-button">
                     <button type="submit" className="submit" onClick={createGame}> CREATE </button>
                 </span>
+                <Footer />
             </div>
     }
 
@@ -77,6 +78,7 @@ export default (props) => {
                 <span className="right-side-button">
                     <button type="submit" className="submit" onClick={joinGame}> JOIN </button>
                 </span>
+                <Footer />
             </div>
     }
 
@@ -104,7 +106,6 @@ export default (props) => {
             </div>
 
             { inLobby() }
-            <Footer />
         </div>
         : <></>
     )
