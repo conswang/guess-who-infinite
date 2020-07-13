@@ -43,7 +43,10 @@ export default class SelectContainer extends React.Component {
         this.state.status === 'select'
           ? <>
               <h3>Choose your Card</h3>
-              <CharacterContainer callback={this.updateSelectedIdx} inFinalSelectMode={true}/>
+              <CharacterContainer
+                callback={this.updateSelectedIdx}
+                inFinalSelectMode={true}
+                category={this.props.category} />
               { chooseButton }
             </>
           : <div className="waitingRoom">

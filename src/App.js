@@ -19,6 +19,7 @@ function App() {
     winner: '',
     guess: false
   });
+  const [category, setCategory] = useState(undefined);
 
   return (
     <Router>
@@ -38,14 +39,17 @@ function App() {
         <Route path="/">
           <Landing
             show={mode === 'landing'}
-            callback={setMode}/>
+            callback={setMode}
+            setCategoryCallback={setCategory}/>
           <SelectContainer
             show={mode === 'select'}
-            callback={setMode}/>
+            callback={setMode}
+            category={category}/>
           <Game
             show={mode === 'game'}
             setModeCallback={setMode}
-            setResultCallback={setResult}/>
+            setResultCallback={setResult}
+            category={category}/>
           <GameEnd
             show={mode === 'gameEnd'}
             result={result}/>

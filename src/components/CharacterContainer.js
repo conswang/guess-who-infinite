@@ -1,14 +1,20 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
+import { socket } from '../App';
 
 export default (props) => {
     const [index, setIndex] = useState([0, 8]);
+    const [datas, setDatas] = useState(data)
     
-    const [datas, setDatas] = useState(data);
-
+    useEffect(() => {
+        if (props.category !== '') {
+            socket.emit('getImages', props.category);
+            socket.on('returnImages', images => setDatas(images))
+        }
+    }, [props.category])
 
     const populateCards = () => {
-        return data.map((card, idx) => {
+        return datas.map((card, idx) => {
             return <Card img={card.img} 
                          isSelect={card.selected} 
                          idx={idx}

@@ -19,6 +19,7 @@ export default (props) => {
         socket.on('createdGame', joinCode => {
             console.log(joinCode);
             setCode(joinCode);
+            props.setCategoryCallback(category);
         });
         setLobby(true);
         
